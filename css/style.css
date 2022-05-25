@@ -1,0 +1,487 @@
+body{
+    background-color: rgb(60, 99, 133);
+}
+
+/*hover efect*/
+.shadowBtn {
+    width: 120px;
+    height: 60px;
+    border: 2px solid rgb(247, 247, 248);
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    margin: 50px 20px;
+}
+
+.shadowBtn:hover {
+    background-color: white;
+    color: black;
+    transition: 1s ease;
+}
+
+.shadowBtn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background: transparent;
+    height: 50%;
+    width: 100%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(8px);
+    transition: 1s ease;
+}
+
+.shadowBtn:hover:before {
+    background: #fff;
+    top: 70px;
+}
+
+/*loading animetion*/
+
+.loader {
+    width: 120px;
+    height: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 50px 20px;
+}
+
+.loader span {
+    font-style: 22px;
+    text-transform: uppercase;
+    margin: auto;
+    color: aqua;
+}
+
+.ball {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(46, 199, 199);
+    animation: bounce .5s alternate infinite;
+}
+
+.ball:nth-child(2) {
+    animation-delay: .16s;
+}
+.ball:nth-child(3) {
+    animation-delay: .32s;
+}
+@keyframes bounce {
+    frome {
+        transform: scaleX(1.25);
+    }
+
+    to{
+        transform: translateY(-50px) scaleX(1);
+    }
+}
+
+/*hover efect*/
+
+.btn {
+    height: 3em;
+    width: 9em;
+    border: 3px solid deepskyblue;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    margin: 50px 20px;
+}
+
+.btn::before,
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: all .8s ;
+}
+
+.btn::before {
+    left: -15px;
+    top: -15px;
+    border-width: 3px 0 0 3px;
+}
+.btn::after {
+    right: -15px;
+    bottom: -15px;
+    border-width: 0 3px 3px 0;
+}
+
+.btn:hover::before,
+.btn:hover::after{
+    width: calc(100% + 27px);
+    height: calc(100% + 27px);
+}
+
+/*tik-tok loading animetion*/ 
+
+.loadertt {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 80px 0 50px 50px;
+    
+}
+
+.loadertt::before,
+.loadertt::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    animation: rotate 1s infinite;
+    unicode-bidi: (0.77, 0, 0.175, 1);
+}
+
+.loadertt::before{
+    background-color: #fc3f9e;
+}
+
+.loadertt::after{
+    background-color: #50e8f3;
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0%,100%{
+        left: 95px;
+    }
+    25%{
+        transform: scale(.3);
+    }
+    50%{
+        left: 0;
+    }
+    75%{
+        transform: scale(1);
+    }
+}
+
+/*scale loading animetion*/
+
+.loaderbar{
+    display: flex;
+    align-items: center;
+    margin: 150px 0 50px 80px;
+}
+
+.bar{
+    display: inline-block;
+    width: 3px; 
+    height: 20px;
+    background-color: rgb(221, 214, 214);
+    border-radius: 10px;
+    animation: scale-up 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+}
+.bar:nth-child(3){
+    animation-delay: .5s;
+}
+@keyframes scale-up {
+    20% {
+        background-color: #fff;
+        transform: scaleY(1.5);
+    }
+    40% {
+        transform: scaleY(1);
+    }
+}
+
+/*  chekbox */
+
+.push {
+    color: azure;
+    margin: 0 0 10px 70px;
+} 
+label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 0 80px 80px;
+}
+
+input { 
+    position: absolute;
+    transform: scale(0); 
+}
+
+input:checked ~ .checkbox {
+    transform: rotate(45deg);
+    width: 20px;
+    margin-left: 16px;
+    border-color: #14f0a3;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 0;  
+}
+
+.checkbox {
+    display: block;
+    width: inherit;
+    height: inherit;
+    border: 3px solid #434343;
+    border-radius: 6px;
+    transition: all 0.375s;
+}
+
+/*iconInstagram*/
+
+.icon i {
+    font-size: 30px;
+    text-shadow: 0 0 15px;
+    animation: alternate 1s infinite linear;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        color: deeppink;
+    }
+    25% {
+        color: deepskyblue;
+    }
+    50% {
+        color: lawngreen;
+    }
+    75% {
+        color: yellow;
+    }
+}
+
+/*btnlogin*/
+
+.loginbtn {
+    cursor: pointer;
+    background: transparent;
+    border: 3px #03ff00;
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #03ff00;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 0 60px;
+}
+
+.loginbtn::before,
+.loginbtn::after {
+    content: '';
+    position: absolute;
+    background: #000;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.loginbtn::before {
+    width: calc(100% - 3.5rem);
+    height: calc(100% + 1rem);
+    top: -0.5rem; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.loginbtn::after {
+    height: calc(100% - 2.5rem);
+    width: calc(100% + 1.1rem );
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*side-bar-icon*/
+
+.side-bar {
+    height: 92px;
+    width: 100px;
+    position: absolute;
+    background: #065FFC;
+    border-radius: 15px;
+    margin: 100px 0 50px 80px;
+}
+
+.side-bar span {
+    height: 5px;
+    width: 65px;
+    display: block;
+    background: #000;
+    position: absolute;
+    background: #fff;
+    left: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.side-bar:hover {
+    cursor: pointer;
+}
+
+.side-bar span:nth-child(1) {
+    top: 35px;
+}
+
+.side-bar span:nth-child(2) {
+    top: 45px;
+}
+
+.side-bar span:nth-child(3) {
+    top: 55px;
+}
+
+.side-bar.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 43px;
+    left: 17px;
+}
+
+.side-bar.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.side-bar.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 45px;
+    left: 16px;
+}
+
+/*gradient-border*/
+
+.gradient-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100px;
+    background: #111807;
+    box-shadow: inset 20px 20px 39px #070a10,
+                inset -20px -20px 39px #b1263e;
+    position: relative;
+    cursor: pointer;
+    margin: 250px 0 70px 70px;
+}
+
+.gradient-border::after {
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    background: linear-gradient(35deg, deepskyblue, deeppink, lawngreen);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+.gradient-border:hover::after {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*loadercolorbols*/
+
+.loadercolorbols {
+    position: absolute;
+    margin: 0 0 0 250px;
+    top: 50%;
+    left: calc(50% + 58px);
+    transform: translate(-50%,-50%)
+                rotate(-90deg) scale(4);
+    
+}
+
+.loadercolorbols span {
+    position: relative;
+    display: block;
+    height: 58px;
+    width: 2px;
+    margin-top: -46px;
+    background: transparent;
+    animation: animate 2s linear infinite;
+}
+
+.loadercolorbols span::before, 
+.loadercolorbols span::after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: #f00;
+    box-shadow: 0 0 2px rgba (0, 0, 0, 1);
+}
+
+.loadercolorbols span::before {
+    top: 0;
+}
+
+.loadercolorbols span::after {
+    bottom: 0;
+}
+
+.loadercolorbols span:nth-child(1)::before,
+.loadercolorbols span:nth-child(1)::after {
+    background-color: #ff0;
+}
+.loadercolorbols span:nth-child(2)::before,
+.loadercolorbols span:nth-child(2)::after {
+    background-color: #ff24a8;
+}
+.loadercolorbols span:nth-child(3)::before,
+.loadercolorbols span:nth-child(3)::after {
+    background-color: #0f0;
+}
+.loadercolorbols span:nth-child(4)::before,
+.loadercolorbols span:nth-child(4)::after {
+    background-color: #2196f3;
+}
+
+.loadercolorbols span:nth-child(1) {
+    animation-delay: 0s;
+}
+.loadercolorbols span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.loadercolorbols span:nth-child(3) {
+    animation-delay: 1s;
+}
+.loadercolorbols span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+@keyframes animate{
+    0%, 75%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
