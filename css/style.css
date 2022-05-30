@@ -20,7 +20,7 @@ body{
     color: black;
     transition: 1s ease;
 }
-
+ 
 .shadowBtn::before {
     content: '';
     position: absolute;
